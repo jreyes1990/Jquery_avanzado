@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Avanzado</title>
+</head>
+<body>
+    <h1>Evento DOM listo</h1>
+    <p>Normalmente, desearemos manipular el DOM</p>
+    
+    <script src="assets/libs/jquery-3.6.1.min.js" charset="utf-8"></script>
+    <script>
+        /*
+        $(document).ready(function(){
+            console.log("Pagina completada")
+        });
+        */
+
+        //document.addEventListener('DOMContentLoaded', pagina_lista(), false);
+
+        r(pagina_lista);
+
+        function r(f){
+            /in/.test(document.readyState)?setTimeout('r('+f+')',10):f()
+        }
+
+        function pagina_lista(){
+            console.log("Pagina Cargada")
+        }
+
+    </script>
+</body>
+</html>
