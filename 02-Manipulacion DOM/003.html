@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Avanzado</title>
+  </head>
+  <body>
+    <h1>Operador logico AND</h1>
+    <h2>Operador logico AND</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum iure maiores
+      optio voluptatibus delectus, voluptas libero voluptatem in nostrum earum
+      ex dolor nesciunt? Necessitatibus sed aperiam corporis quo, commodi
+      laborum?
+    </p>
+
+    <script src="assets/libs/jquery-3.6.1.min.js" charset="utf-8"></script>
+    <script>
+      if ($("h1").length) {
+        console.log("El elemento existe");
+      }
+
+      $("h2").length && console.log("El elemento existe");
+    </script>
+  </body>
+</html>
