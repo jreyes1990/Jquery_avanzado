@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Avanzado</title>
+  </head>
+  <body>
+    <h1>Evento DOM listo</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum iure maiores
+      optio voluptatibus delectus, voluptas libero voluptatem in nostrum earum
+      ex dolor nesciunt? Necessitatibus sed aperiam corporis quo, commodi
+      laborum?
+    </p>
+
+    <script src="assets/libs/jquery-3.6.1.min.js" charset="utf-8"></script>
+    <script>
+      var route = {
+        _routes: {},
+        add: function (url, action) {
+          this._routes[url] = action;
+        },
+        run: function () {
+          $.each(this._routes, function (patron) {
+            if (location.href.match(patron)) {
+              this();
+            }
+          });
+        },
+      };
+
+      route.add("002.html", function () {
+        console.log("Este codigo solo funciona en la pagina 002.html");
+      });
+
+      route.add("about.html", function () {
+        console.log("Este codigo solo funciona en la pagina about.html");
+      });
+
+      route.add(".*.html", function () {
+        console.log("Este codigo solo funciona para cualquier pagina html");
+      });
+
+      route.run();
+    </script>
+  </body>
+</html>
