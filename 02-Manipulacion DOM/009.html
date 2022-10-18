@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jQuery Avanzado</title>
+  </head>
+  <body>
+    <h1>Metodo JQuery is()</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum iure maiores
+      optio voluptatibus delectus, voluptas libero voluptatem in nostrum earum
+      ex dolor nesciunt? Necessitatibus sed aperiam corporis quo, commodi
+      laborum?
+    </p>
+
+    <ul id="desayuno">
+      <li class="huevos">No</li>
+      <li class="tostadas">No</li>
+      <li class="jugo">No</li>
+    </ul>
+
+    <script src="assets/libs/jquery-3.6.1.min.js" charset="utf-8"></script>
+    <script>
+      var $desayuno = $("#desayuno");
+
+      $desayuno.find('.huevos').text('Si').end()
+               .find('.tostadas').text('Si').end()
+               .find('.jugo').text('Si').end();
+    </script>
+  </body>
+</html>
