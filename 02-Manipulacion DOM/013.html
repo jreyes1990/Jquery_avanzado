@@ -16,23 +16,18 @@
       laborum?
     </p>
 
-    <style id="divEstilo">
-      html{
-        background-color: red;
-        position: relative;
-      }
-
-      body{
-        font-size: 20px;
-        color: blue;
-      }
-    </style>
-
     <script src="assets/libs/jquery-3.6.1.min.js" charset="utf-8"></script>
     <script>
-      //$("h1, p").attr("contentEditable", true);
-      $("#divEstilo").css({'display':'block', 'white-space':'pre'})
-                     .attr("contentEditable", true);
+      var url = 'https://www.udemy.com/courses/search/?src=ukw&q=dfg#overview';
+      var a = $('<a>', { href: url});
+
+      console.log('Host name: ', a.prop('hostname'))
+      console.log('Path: ', a.prop('pathname'))
+      console.log('Query: ', a.prop('search'))
+      console.log('Protocolo: ', a.prop('protocol'))
+      console.log('Hash: ', a.prop('hash'))
+
+      console.log(a.prop('search').split("/"))
     </script>
   </body>
 </html>
