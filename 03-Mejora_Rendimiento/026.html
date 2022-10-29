@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+    <title>jQuery Avanzado</title>
+  </head>
+  <body>
+    <h1>Metodo JQuery is()</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum iure maiores
+      optio voluptatibus delectus, voluptas libero voluptatem in nostrum earum
+      ex dolor nesciunt? Necessitatibus sed aperiam corporis quo, commodi
+      laborum?
+    </p>
+
+    <ul id="numeros">
+      <li>Primero</li>
+      <li>Segundo</li>
+      <li>Tercero</li>
+      <li>Cuarto</li>
+      <li>Quinto</li>
+    </ul>
+
+    <!-- Libreria de jQuery -->
+    <script src="/assets/libs/jquery.min.js" charset="utf-8"></script>
+    <script>
+      $("#numeros li").eq(0).remove().end()
+                      .eq(1).remove().end()
+                      .eq(2).remove().end();
+    </script>
+  </body>
+</html>
