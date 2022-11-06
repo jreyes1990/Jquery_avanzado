@@ -1,3 +1,31 @@
 {
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "auto-rename-tag.activationOnLanguage": ["html", "xml", "php", "javascript", "erb"],
+  "editor.guides.bracketPairs":"active",    
+  "editor.bracketPairColorization.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",    
+    },
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ],
+  "window.zoomLevel": 1,
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark"
 }
