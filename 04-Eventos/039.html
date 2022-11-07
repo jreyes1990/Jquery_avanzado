@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Eventos</title>
+
+    <!-- Cambiar por un CDN del bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      #ball {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>JQuery</h1>
+    <h3 style="color: darkgreen;">Trabajando con eventos cuando tocamos la pantalla con el dedo</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus, beatae ad ipsam quis enim odio officia recusandae minus impedit incidunt in fugiat iusto nemo modi dolorem similique esse? Consequuntur!
+    </p>
+
+    <!-- Librería de jQuery -->
+    <!--<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script>
+      var ball = $('<div id="ball"></div>').appendTo('body');
+      var startPosition = {};
+      var elementPosition = {};
+
+      ball.on('mousedown touchstart', function( e ){
+        e.preventDefault();
+
+        e= (e.originalEvent.touches) ? e.originalEvent.touches[0] : e;
+
+        startPosition = {
+          x: e.pageX,
+          y: e.pageY
+        };
+
+        elementPosition = {
+          x: ball.offset().left,
+          y: ball.offset().top
+        };
+
+        ball.on('mousemove.rem touchmove.rem', function( e ){
+          e = ( e.originalEvent.touches ) ? e.originalEvent.touches[0] : e;
+
+          ball.css({
+            top: elementPosition.y + (e.pageY - startPosition.y),
+            left: elementPosition.x + (e.pageX - startPosition.x)
+          });
+        });
+      });
+
+      ball.on('mouseup touched', function(){
+        ball.off('.rem');
+      });
+    </script>
+  </body>
+</html>
