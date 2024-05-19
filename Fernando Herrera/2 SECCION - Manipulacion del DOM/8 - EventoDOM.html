@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/libs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
+    <title>Document</title>
+  </head>
+  <h1>Evento DOM listo</h1>
+  <p>
+    Normalmente, desearemos manipular el DOM (Document Object Model), cuando la
+    página este lista y completamente creada
+  </p>
+  <body>
+    <!-- Libreria de jQuery -->
+    <script src="../assets/libs/js/jquery.slim.min.js" charset="utf-8"></script>
+    <script>
+      // Ejecución con jQuery
+      // $(document).ready(function () { pagina_cargada(); });
+      // $(pagina_cargada());
+
+      // Ejecución sin jQuery
+      document.addEventListener("DOMContentLoaded", pagina_cargada(), false);
+
+      function pagina_cargada() {
+        console.log("Página Cargada");
+      }
+    </script>
+  </body>
+</html>
