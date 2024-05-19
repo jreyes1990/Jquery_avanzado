@@ -1,2 +1,3 @@
-# Jquery_avanzado
-Curso de jquery, trucos de desarrollo
+# Jquery
+
+- Curso de jquery, trucos de desarrollo
