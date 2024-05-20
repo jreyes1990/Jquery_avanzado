@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/libs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
+    <title>Document</title>
+  </head>
+  <h1>Página Predeterminada</h1>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, corporis
+    sunt architecto nemo commodi, aliquam provident earum quasi nobis
+    perferendis dolore dolor? Corrupti doloribus exercitationem nam iure nulla
+    laudantium commodi!
+  </p>
+  <body>
+    <!-- Libreria de jQuery -->
+    <script src="../assets/libs/js/jquery.slim.min.js" charset="utf-8"></script>
+    <script>
+      var route = {
+        _routes: {},
+        add: function (url, action) {
+          this._routes[url] = action;
+        },
+        run: function () {
+          $.each(this._routes, function (patron) {
+            if (location.href.match(patron)) {
+              // Puedo ejecutar cualquier codigo
+              this();
+            }
+          });
+        },
+      };
+
+      route.add("008-EventoDOM.html", function () {
+        console.log("Este codigo, solo funciona en la pagina 8-EventoDOM.html");
+      });
+
+      route.add(".*.html", function () {
+        console.log("Este codigo, solo funciona para cualquier página html");
+      });
+
+      route.run();
+    </script>
+  </body>
+</html>
