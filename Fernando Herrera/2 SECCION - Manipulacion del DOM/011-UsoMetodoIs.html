@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/libs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
+    <title>Document</title>
+  </head>
+  <h1>Truco - Operador Logico AND</h1>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, corporis
+    sunt architecto nemo commodi, aliquam provident earum quasi nobis
+    perferendis dolore dolor? Corrupti doloribus exercitationem nam iure nulla
+    laudantium commodi!
+  </p>
+  <body>
+    <div class="elem"></div>
+    <!-- Libreria de jQuery -->
+    <script
+      src="../assets/libs/js/jquery-3.7.1.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="../assets/libs/js/popper.min.js" charset="utf-8"></script>
+    <script src="../assets/libs/js/bootstrap.min.js" charset="utf-8"></script>
+    <script>
+      var $elem = $(".elem");
+
+      // Es un Div ?
+      $elem.is("div") && console.log("Es un DIV");
+
+      // Tiene la clase Elem ?
+      $elem.is(".elem") && console.log("Tiene la clase Elem");
+
+      // El Elem esta visible ?
+      $elem.is(":not(:visible)") && console.log("El elemento esta invisible");
+
+      $elem.animate({ width: 200 }, 1000);
+      // El elemento es animado ?
+      $elem.is(":animated") && console.log("Es animado");
+    </script>
+  </body>
+</html>
